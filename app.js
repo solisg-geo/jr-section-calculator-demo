@@ -26,22 +26,22 @@ function drawRectangle(b, h) {
   const w = b * scale, d = h * scale, x = 250 - w / 2, y = 205 - d / 2;
   document.querySelector('#svg-description').textContent = `Base ${format(b)} mm y altura ${format(h)} mm. Ejes X-X horizontal e Y-Y vertical en el centroide.`;
   document.querySelector('#geometry').innerHTML = `
-    <rect x="${x}" y="${y}" width="${w}" height="${d}" fill="#d9eeea" stroke="#277f7a" stroke-width="2"/>
+    <rect x="${x}" y="${y}" width="${w}" height="${d}" fill="#B3C8E6" stroke="#001B96" stroke-width="2"/>
     <rect x="${x}" y="${y}" width="${w}" height="${d}" fill="url(#hatch)"/>
-    <g stroke="#bb8250" stroke-width="1.3" stroke-dasharray="9 5 2 5"><path d="M 48 205 H 452"/><path d="M 250 30 V 380"/></g>
-    <g fill="#a56e3f" font-size="13" font-weight="600">
+    <g stroke="#5A85D7" stroke-width="1.3" stroke-dasharray="9 5 2 5"><path d="M 48 205 H 452"/><path d="M 250 30 V 380"/></g>
+    <g fill="#0B2265" font-size="13" font-weight="600">
       <text x="35" y="198">X</text>
       <text x="455" y="198">X</text>
       <text x="260" y="34">Y</text>
       <text x="260" y="382">Y</text>
     </g>
-    <circle cx="250" cy="205" r="4" fill="#277f7a" stroke="white" stroke-width="2"/>
-    <g stroke="#789099" stroke-width="1">
+    <circle cx="250" cy="205" r="4" fill="#001B96" stroke="white" stroke-width="2"/>
+    <g stroke="#4B4B4B" stroke-width="1">
       <path d="M ${x} ${y+d+8} V 406 M ${x+w} ${y+d+8} V 406 M ${x+w+8} ${y} H 425 M ${x+w+8} ${y+d} H 425" opacity=".6"/>
       <path d="M ${x} 398 H ${x+w}" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
       <path d="M 416 ${y} V ${y+d}" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
     </g>
-    <g fill="#526d78" font-size="13">
+    <g fill="#000000" font-size="13">
       <text x="250" y="426" text-anchor="middle">b = ${format(b)} mm</text>
       <text x="434" y="205" text-anchor="middle" transform="rotate(-90 434 205)">h = ${format(h)} mm</text>
     </g>`;
@@ -54,17 +54,17 @@ function drawCircle(r) {
   const cx = 250, cy = 205;
   document.querySelector('#svg-description').textContent = `Radio ${format(r)} mm. Eje centrado en el origen.`;
   document.querySelector('#geometry').innerHTML = `
-    <circle cx="${cx}" cy="${cy}" r="${rad}" fill="#d9eeea" stroke="#277f7a" stroke-width="2"/>
+    <circle cx="${cx}" cy="${cy}" r="${rad}" fill="#B3C8E6" stroke="#001B96" stroke-width="2"/>
     <circle cx="${cx}" cy="${cy}" r="${rad}" fill="url(#hatch)"/>
-    <g stroke="#bb8250" stroke-width="1.3" stroke-dasharray="9 5 2 5"><path d="M 48 205 H 452"/><path d="M 250 30 V 380"/></g>
-    <g fill="#a56e3f" font-size="13" font-weight="600">
+    <g stroke="#5A85D7" stroke-width="1.3" stroke-dasharray="9 5 2 5"><path d="M 48 205 H 452"/><path d="M 250 30 V 380"/></g>
+    <g fill="#0B2265" font-size="13" font-weight="600">
       <text x="35" y="198">X</text>
       <text x="455" y="198">X</text>
       <text x="260" y="34">Y</text>
       <text x="260" y="382">Y</text>
     </g>
-    <circle cx="${cx}" cy="${cy}" r="4" fill="#277f7a" stroke="white" stroke-width="2"/>
-    <g fill="#526d78" font-size="13">
+    <circle cx="${cx}" cy="${cy}" r="4" fill="#001B96" stroke="white" stroke-width="2"/>
+    <g fill="#000000" font-size="13">
       <text x="${cx}" y="${cy + rad + 20}" text-anchor="middle">r = ${format(r)} mm</text>
     </g>`;
 }
@@ -157,13 +157,13 @@ function draw(b, h) {
   const w = b * scale, d = h * scale, x = 250 - w / 2, y = 205 - d / 2;
   document.querySelector('#svg-description').textContent = `Base ${format(b)} mm y altura ${format(h)} mm. Ejes X-X horizontal e Y-Y vertical en el centroide.`;
   document.querySelector('#geometry').innerHTML = `
-    <rect x="${x}" y="${y}" width="${w}" height="${d}" fill="#d9eeea" stroke="#277f7a" stroke-width="2"/>
+    <rect x="${x}" y="${y}" width="${w}" height="${d}" fill="#B3C8E6" stroke="#001B96" stroke-width="2"/>
     <rect x="${x}" y="${y}" width="${w}" height="${d}" fill="url(#hatch)"/>
-    <g stroke="#bb8250" stroke-width="1.3" stroke-dasharray="9 5 2 5"><path d="M 48 205 H 452"/><path d="M 250 30 V 380"/></g>
-    <g fill="#a56e3f" font-size="13" font-weight="600"><text x="35" y="198">X</text><text x="455" y="198">X</text><text x="260" y="34">Y</text><text x="260" y="382">Y</text></g>
-    <circle cx="250" cy="205" r="4" fill="#277f7a" stroke="white" stroke-width="2"/>
-    <g stroke="#789099" stroke-width="1"><path d="M ${x} ${y+d+8} V 406 M ${x+w} ${y+d+8} V 406 M ${x+w+8} ${y} H 425 M ${x+w+8} ${y+d} H 425" opacity=".6"/><path d="M ${x} 398 H ${x+w}" marker-start="url(#arrow)" marker-end="url(#arrow)"/><path d="M 416 ${y} V ${y+d}" marker-start="url(#arrow)" marker-end="url(#arrow)"/></g>
-    <g fill="#526d78" font-size="13"><text x="250" y="426" text-anchor="middle">b = ${format(b)} mm</text><text x="434" y="205" text-anchor="middle" transform="rotate(-90 434 205)">h = ${format(h)} mm</text></g>`;
+    <g stroke="#5A85D7" stroke-width="1.3" stroke-dasharray="9 5 2 5"><path d="M 48 205 H 452"/><path d="M 250 30 V 380"/></g>
+    <g fill="#0B2265" font-size="13" font-weight="600"><text x="35" y="198">X</text><text x="455" y="198">X</text><text x="260" y="34">Y</text><text x="260" y="382">Y</text></g>
+    <circle cx="250" cy="205" r="4" fill="#001B96" stroke="white" stroke-width="2"/>
+    <g stroke="#4B4B4B" stroke-width="1"><path d="M ${x} ${y+d+8} V 406 M ${x+w} ${y+d+8} V 406 M ${x+w+8} ${y} H 425 M ${x+w+8} ${y+d} H 425" opacity=".6"/><path d="M ${x} 398 H ${x+w}" marker-start="url(#arrow)" marker-end="url(#arrow)"/><path d="M 416 ${y} V ${y+d}" marker-start="url(#arrow)" marker-end="url(#arrow)"/></g>
+    <g fill="#000000" font-size="13"><text x="250" y="426" text-anchor="middle">b = ${format(b)} mm</text><text x="434" y="205" text-anchor="middle" transform="rotate(-90 434 205)">h = ${format(h)} mm</text></g>`;
 }
 
 function update() {
