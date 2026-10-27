@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102d38">
+  <title>Geo Section Calculator · Rectángulo sólido</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="./"><span class="brand-icon">▥</span> GEO<span class="brand-light">SECTION</span></a><span class="topbar-note">HERRAMIENTAS DE INGENIERÍA</span><span class="version">v1.0</span></header>
+  <main>
+    <div class="intro"><div><p class="eyebrow">ANÁLISIS DE SECCIONES</p><h1>Geometría que da forma<br>a tus estructuras.</h1><p class="subtitle">Propiedades geométricas de una sección rectangular sólida.</p></div><span class="local-badge"><i></i> Cálculo local · Sin conexión externa</span></div>
+    <div class="workspace">
+      <section class="panel inputs" aria-labelledby="dimensions-title">
+        <div class="panel-heading"><span class="step">01</span><h2 id="dimensions-title">Dimensiones</h2></div>
+        <div class="shape-choice"><span class="shape-symbol">▭</span><div><strong>Rectángulo sólido</strong><small>Sección transversal</small></div><span class="check">✓</span></div>
+        <form id="dimensions" novalidate>
+          <label for="base">Base <span>b</span></label><div class="input-wrap"><input id="base" name="base" type="number" min="0" step="any" value="200" required aria-describedby="error"><span>mm</span></div>
+          <label for="height">Altura <span>h</span></label><div class="input-wrap"><input id="height" name="height" type="number" min="0" step="any" value="300" required aria-describedby="error"><span>mm</span></div>
+          <p id="error" role="alert"></p>
+          <button type="reset">↺ &nbsp; Restablecer dimensiones</button>
+        </form>
+        <div class="input-note"><span>ⓘ</span><p>Introduce dimensiones positivas en milímetros. Los resultados se actualizan automáticamente.</p></div>
+      </section>
+      <section class="panel visualization" aria-labelledby="view-title">
+        <div class="panel-heading"><span class="step">02</span><h2 id="view-title">Vista de la sección</h2><span class="view-tag">2D</span></div>
+        <div class="drawing" id="drawing"><svg id="section-svg" viewBox="0 0 500 440" role="img" aria-labelledby="svg-title svg-description"><title id="svg-title">Sección rectangular</title><desc id="svg-description"></desc><defs><pattern id="hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="9" stroke="#78b6b2" stroke-width="1" opacity=".35"/></pattern><marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#789099"/></marker></defs><g id="geometry"></g></svg><p id="invalid-view" hidden>Introduce dimensiones válidas para visualizar la sección.</p></div>
+        <div class="legend"><span><i class="legend-section"></i> Sección sólida</span><span><i class="legend-axis"></i> Ejes centroidales</span></div>
+        <div class="view-footer"><span>Centroide en b/2, h/2</span><span>Proporción real · Ajuste automático</span></div>
+      </section>
+      <section class="panel results" aria-labelledby="results-title"><div class="panel-heading"><span class="step">03</span><h2 id="results-title">Propiedades</h2></div><div id="results" aria-live="polite" aria-atomic="true"></div><p class="results-note">Respecto a los ejes centroidales X-X e Y-Y.</p></section>
+    </div>
+    <footer><span>GEO SECTION CALCULATOR</span><p>Precisión en cada dimensión.</p><span>Sistema de unidades: mm</span></footer>
+  </main>
+</body>
+</html>
