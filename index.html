@@ -14,9 +14,31 @@
     <div class="intro"><div><p class="eyebrow">ANÁLISIS DE SECCIONES</p><h1>Geometría que da forma<br>a tus estructuras.</h1><p class="subtitle">Propiedades geométricas de una sección rectangular sólida.</p></div><span class="local-badge"><i></i> Cálculo local · Sin conexión externa</span></div>
     <div class="workspace">
       <section class="panel inputs" aria-labelledby="dimensions-title">
+        <div class="shape-choice">
+          <label for="shape-select" class="sr-only">Seleccionar forma</label>
+          <select id="shape-select" aria-label="Seleccionar forma">
+            <option value="rectangle" selected>Rectángulo sólido</option>
+            <option value="circle">Círculo sólido</option>
+          </select>
+        </div>
         <div class="panel-heading"><span class="step">01</span><h2 id="dimensions-title">Dimensiones</h2></div>
         <div class="shape-choice"><span class="shape-symbol">▭</span><div><strong>Rectángulo sólido</strong><small>Sección transversal</small></div><span class="check">✓</span></div>
         <form id="dimensions" novalidate>
+          <label for="shape-select" class="sr-only">Seleccionar forma</label>
+          <select id="shape-select" aria-label="Seleccionar forma" style="margin-bottom:1rem;">
+            <option value="rectangle" selected>Rectángulo sólido</option>
+            <option value="circle">Círculo sólido</option>
+          </select>
+          <div id="rect-inputs">
+            <label for="base">Base <span>b</span></label>
+            <div class="input-wrap"><input id="base" name="base" type="number" min="0" step="any" value="200" required aria-describedby="error"><span>mm</span></div>
+            <label for="height">Altura <span>h</span></label>
+            <div class="input-wrap"><input id="height" name="height" type="number" min="0" step="any" value="300" required aria-describedby="error"><span>mm</span></div>
+          </div>
+          <div id="circle-inputs" hidden>
+            <label for="radius">Radio <span>r</span></label>
+            <div class="input-wrap"><input id="radius" name="radius" type="number" min="0" step="any" value="100" required aria-describedby="error"><span>mm</span></div>
+          </div>
           <label for="base">Base <span>b</span></label><div class="input-wrap"><input id="base" name="base" type="number" min="0" step="any" value="200" required aria-describedby="error"><span>mm</span></div>
           <label for="height">Altura <span>h</span></label><div class="input-wrap"><input id="height" name="height" type="number" min="0" step="any" value="300" required aria-describedby="error"><span>mm</span></div>
           <p id="error" role="alert"></p>
